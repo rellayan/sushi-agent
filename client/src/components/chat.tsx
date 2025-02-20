@@ -158,7 +158,7 @@ export default function Page({ agentId }: { agentId: UUID }) {
 
     // default message and variant
     const defaultMessage= {
-        text: "回首向来萧瑟处，归去，也无风雨也无晴",
+        text: "回首向来萧瑟处，归去，也无风雨也无晴。",
         user: "苏轼",
         action: "NONE",
         createdAt: Date.now(),
