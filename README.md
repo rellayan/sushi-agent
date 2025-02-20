@@ -14,9 +14,9 @@
 
 技术方案
 
-1. 采用 [Eliza 智能体框架](https://elizaos.github.io/eliza/) 实现了 Agent 描述，基于 [elizaOS/eliza-starter](https://github.com/elizaOS/eliza-starter) 模板开发
-2. 使用 [NEAR AI](https://docs.near.ai/) 模型服务来调用 Agent LLM 接口，支持主流开源大模型如 Llama, QWen, DeepSeek 等。但没有使用 NEAR AI 的 Agent 部署服务
-3. 背后调用的是 [DeepSeek v3](https://github.com/deepseek-ai/DeepSeek-v3) 开源大模型
+1. 采用 [Eliza](https://elizaos.github.io/eliza/) 模块化的智能体框架，实现了 Agent 描述，基于 [elizaOS/eliza-starter](https://github.com/elizaOS/eliza-starter) 模板开发
+2. 使用 [NEAR AI](https://docs.near.ai/) 模型服务来调用 Agent LLM 接口，支持主流开源大模型如 Llama、QWen、DeepSeek 等。但考虑到需要基于 Eliza 前端模板修改，没有使用 NEAR AI 的 Agent 部署服务
+3. 背后调用的是 [DeepSeek v3](https://github.com/deepseek-ai/DeepSeek-v3) 开源大模型，为了提升响应速度，部署时没有使用 DeepSeek R1，但是效果仍然不错，以后可以根据需要切换模型
 4. 前端开发使用 [React 框架](https://github.com/facebook/react)
 5. 后端开发使用 [Node.js](https://github.com/nodejs/node)（版本需要是 v22 或以上）
 
