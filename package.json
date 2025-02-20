@@ -38,7 +38,19 @@
     "overrides": {
       "@elizaos/core@0.1.9": "npm:@near-agent/elizaos-core@0.1.9",
       "onnxruntime-node": "1.20.0"
-    }
+    },
+    "onlyBuiltDependencies": [
+      "@elizaos/plugin-node",
+      "better-sqlite3",
+      "bigint-buffer",
+      "bufferutil",
+      "canvas",
+      "es5-ext",
+      "esbuild",
+      "node-llama-cpp",
+      "protobufjs",
+      "puppeteer"
+    ]
   },
   "devDependencies": {
     "ts-node": "10.9.2",
