@@ -8,7 +8,6 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import Chat from "./routes/chat";
 import Overview from "./routes/overview";
 import Home from "./routes/home";
-import useVersion from "./hooks/use-version";
 
 const queryClient = new QueryClient({
     defaultOptions: {
@@ -19,7 +18,6 @@ const queryClient = new QueryClient({
 });
 
 function App() {
-    useVersion();
     return (
         <QueryClientProvider client={queryClient}>
             <div

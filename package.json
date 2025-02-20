@@ -1,6 +1,6 @@
 {
   "name": "sushi-agent",
-  "version": "0.1.9",
+  "version": "0.1.0",
   "main": "src/index.ts",
   "type": "module",
   "scripts": {
