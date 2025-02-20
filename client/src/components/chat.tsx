@@ -156,6 +156,15 @@ export default function Page({ agentId }: { agentId: UUID }) {
         }
     };
 
+    // default message and variant
+    const defaultMessage= {
+        text: "回首向来萧瑟处，归去，也无风雨也无晴",
+        user: "苏轼",
+        action: "NONE",
+        createdAt: Date.now(),
+    };
+    const defaultVariant = getMessageVariant(defaultMessage?.user);
+
     const messages =
         queryClient.getQueryData<ContentWithUser[]>(["messages", agentId]) ||
         [];
@@ -179,7 +188,7 @@ export default function Page({ agentId }: { agentId: UUID }) {
                     scrollToBottom={scrollToBottom}
                     disableAutoScroll={disableAutoScroll}
                 >
-                    {transitions((style, message: ContentWithUser) => {
+                    {messages.length > 0 && transitions((style, message: ContentWithUser) => {
                         const variant = getMessageVariant(message?.user);
                         return (
                             <CustomAnimatedDiv
@@ -196,8 +205,8 @@ export default function Page({ agentId }: { agentId: UUID }) {
                                     className="flex flex-row items-center gap-2"
                                 >
                                     {message?.user !== "user" ? (
-                                        <Avatar className="size-8 p-1 border rounded-full select-none">
-                                            <AvatarImage src="/elizaos-icon.png" />
+                                        <Avatar className="size-12 p-1 border rounded-full select-none">
+                                            <AvatarImage src="/sushi-icon.jpg" />
                                         </Avatar>
                                     ) : null}
                                     <div className="flex flex-col">
@@ -261,11 +270,11 @@ export default function Page({ agentId }: { agentId: UUID }) {
                                                         {message.source}
                                                     </Badge>
                                                 ) : null}
-                                                {message?.action ? (
+                                                {/* {message?.action ? (
                                                     <Badge variant="outline">
                                                         {message.action}
                                                     </Badge>
-                                                ) : null}
+                                                ) : null} */}
                                                 {message?.createdAt ? (
                                                     <ChatBubbleTimestamp
                                                         timestamp={moment(
@@ -280,6 +289,68 @@ export default function Page({ agentId }: { agentId: UUID }) {
                             </CustomAnimatedDiv>
                         );
                     })}
+                    { /* default message from agent */ }
+                    {messages.length === 0 && 
+                        <CustomAnimatedDiv
+                            style={{
+                                display: "flex",
+                                flexDirection: "column",
+                                gap: "0.5rem",
+                                padding: "1rem",
+                            }}
+                        >
+                            <ChatBubble
+                                variant={defaultVariant}
+                                className="flex flex-row items-center gap-2"
+                            >
+                                {defaultMessage?.user !== "user" ? (
+                                    <Avatar className="size-12 p-1 border rounded-full select-none">
+                                        <AvatarImage src="/sushi-icon.jpg" />
+                                    </Avatar>
+                                ) : null}
+                                <div className="flex flex-col">
+                                    <ChatBubbleMessage
+                                        isLoading={false}
+                                    >
+                                        {defaultMessage?.user !== "user" ? (
+                                            <AIWriter>
+                                                {defaultMessage?.text}
+                                            </AIWriter>
+                                        ) : (
+                                            defaultMessage?.text
+                                        )}
+                                    </ChatBubbleMessage>
+                                    <div className="flex items-center gap-4 justify-between w-full mt-1">
+                                        {defaultMessage?.text &&
+                                        (
+                                            <div className="flex items-center gap-1">
+                                                <CopyButton
+                                                    text={defaultMessage?.text}
+                                                />
+                                                <ChatTtsButton
+                                                    agentId={agentId}
+                                                    text={defaultMessage?.text}
+                                                />
+                                            </div>
+                                        )}
+                                        <div
+                                            className={cn([
+                                                "flex items-center justify-between gap-4 select-none",
+                                            ])}
+                                        >
+                                            {defaultMessage?.createdAt ? (
+                                                <ChatBubbleTimestamp
+                                                    timestamp={moment(
+                                                        defaultMessage?.createdAt
+                                                    ).format("LT")}
+                                                />
+                                            ) : null}
+                                        </div>
+                                    </div>
+                                </div>
+                            </ChatBubble>
+                        </CustomAnimatedDiv>
+                    }
                 </ChatMessageList>
             </div>
             <div className="px-4 pb-4">
@@ -314,7 +385,7 @@ export default function Page({ agentId }: { agentId: UUID }) {
                         onKeyDown={handleKeyDown}
                         value={input}
                         onChange={({ target }) => setInput(target.value)}
-                        placeholder="Type your message here..."
+                        placeholder="想和东坡先生聊些什么？"
                         className="min-h-12 resize-none rounded-md bg-card border-0 p-3 shadow-none focus-visible:ring-0"
                     />
                     <div className="flex items-center p-3 pt-0">
@@ -360,7 +431,7 @@ export default function Page({ agentId }: { agentId: UUID }) {
                         >
                             {sendMessageMutation?.isPending
                                 ? "..."
-                                : "Send Message"}
+                                : "交谈"}
                             <Send className="size-3.5" />
                         </Button>
                     </div>

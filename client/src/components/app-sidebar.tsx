@@ -37,8 +37,8 @@ export function AppSidebar() {
                         <SidebarMenuButton size="lg" asChild>
                             <NavLink to="/">
                                 <img
-                                    alt="elizaos-icon"
-                                    src="/elizaos-icon.png"
+                                    alt="sushi-icon"
+                                    src="/sushi-icon.jpg"
                                     width="100%"
                                     height="100%"
                                     className="size-7"
@@ -46,9 +46,9 @@ export function AppSidebar() {
 
                                 <div className="flex flex-col gap-0.5 leading-none">
                                     <span className="font-semibold">
-                                        ElizaOS
+                                        苏轼
                                     </span>
-                                    <span className="">v{info?.version}</span>
+                                    {/* <span className="">v{info?.version}</span> */}
                                 </div>
                             </NavLink>
                         </SidebarMenuButton>
@@ -57,64 +57,22 @@ export function AppSidebar() {
             </SidebarHeader>
             <SidebarContent>
                 <SidebarGroup>
-                    <SidebarGroupLabel>Agents</SidebarGroupLabel>
                     <SidebarGroupContent>
                         <SidebarMenu>
-                            {query?.isPending ? (
-                                <div>
-                                    {Array.from({ length: 5 }).map(
-                                        (_, _index) => (
-                                            <SidebarMenuItem key={"skeleton-item"}>
-                                                <SidebarMenuSkeleton />
-                                            </SidebarMenuItem>
-                                        )
-                                    )}
-                                </div>
-                            ) : (
-                                <div>
-                                    {agents?.map(
-                                        (agent: { id: UUID; name: string }) => (
-                                            <SidebarMenuItem key={agent.id}>
-                                                <NavLink
-                                                    to={`/chat/${agent.id}`}
-                                                >
-                                                    <SidebarMenuButton
-                                                        isActive={location.pathname.includes(
-                                                            agent.id
-                                                        )}
-                                                    >
-                                                        <User />
-                                                        <span>
-                                                            {agent.name}
-                                                        </span>
-                                                    </SidebarMenuButton>
-                                                </NavLink>
-                                            </SidebarMenuItem>
-                                        )
-                                    )}
-                                </div>
-                            )}
+                            <img
+                                alt="sushi-full"
+                                src="/sushi-full.jpg"
+                                width="100%"
+                                height="100%"
+                                // className="size-7"
+                            />
+                            {/* <span className=""> image </span> */}
                         </SidebarMenu>
                     </SidebarGroupContent>
                 </SidebarGroup>
             </SidebarContent>
             <SidebarFooter>
                 <SidebarMenu>
-                    <SidebarMenuItem>
-                        <NavLink
-                            to="https://elizaos.github.io/eliza/docs/intro/"
-                            target="_blank"
-                        >
-                            <SidebarMenuButton>
-                                <Book /> Documentation
-                            </SidebarMenuButton>
-                        </NavLink>
-                    </SidebarMenuItem>
-                    <SidebarMenuItem>
-                        <SidebarMenuButton disabled>
-                            <Cog /> Settings
-                        </SidebarMenuButton>
-                    </SidebarMenuItem>
                     <ConnectionStatus />
                 </SidebarMenu>
             </SidebarFooter>

@@ -54,10 +54,10 @@ export default function ConnectionStatus() {
                                     ])}
                                 >
                                     {isLoading
-                                        ? "Connecting..."
+                                        ? "连接中..."
                                         : connected
-                                          ? "Connected"
-                                          : "Disconnected"}
+                                          ? "已连接"
+                                          : "已断开"}
                                 </span>
                             </div>
                         </div>

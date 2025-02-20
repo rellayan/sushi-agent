@@ -23,9 +23,9 @@ function App() {
     return (
         <QueryClientProvider client={queryClient}>
             <div
-                className="dark antialiased"
+                className="light antialiased"
                 style={{
-                    colorScheme: "dark",
+                    colorScheme: "light",
                 }}
             >
                 <BrowserRouter>
