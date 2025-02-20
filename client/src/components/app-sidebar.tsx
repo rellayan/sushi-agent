@@ -41,11 +41,11 @@ export function AppSidebar() {
                                     src="/sushi-icon.jpg"
                                     width="100%"
                                     height="100%"
-                                    className="size-7"
+                                    className="size-9"
                                 />
 
                                 <div className="flex flex-col gap-0.5 leading-none">
-                                    <span className="font-semibold">
+                                    <span className="font-semibold text-base p-1">
                                         苏轼
                                     </span>
                                     {/* <span className="">v{info?.version}</span> */}
