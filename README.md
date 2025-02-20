@@ -9,7 +9,7 @@ python3 -m pip install nearai
 nearai login
 ```
 
-2. 配置环境变量，将 `.env.example` 复制到 `.env`
+2. 配置环境变量：将 `.env.example` 复制到 `.env`
 
 ```bash
 cp .env.example .env
