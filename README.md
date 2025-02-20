@@ -4,7 +4,7 @@
 
 苏轼智能体借助 DeepSeek 大语言模型 (LLM) 开发了一个具备苏轼的性格特点、语言风格和知识经验的 AI 智能体，帮助我们与东坡先生进行穿越古今的人生对话。
 
-一起来与苏轼交谈吧：🔗 https://sushi-agent-client.onrender.com
+一起来与东坡先生交谈吧：🔗 https://sushi-agent-client.onrender.com
 
 <img width="1460" alt="image" src="https://github.com/user-attachments/assets/dca2701a-79d3-4276-8646-082d92907017" />
 
