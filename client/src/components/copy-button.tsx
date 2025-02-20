@@ -30,7 +30,7 @@ const CopyButton = ({ text }: { text: string }) => {
                 </Button>
             </TooltipTrigger>
             <TooltipContent side="bottom">
-                <p>Copy</p>
+                <p>复制</p>
             </TooltipContent>
         </Tooltip>
     );
