@@ -35,22 +35,22 @@ export function AppSidebar() {
                 <SidebarMenu>
                     <SidebarMenuItem>
                         <SidebarMenuButton size="lg" asChild>
-                            <NavLink to="/">
-                                <img
+                            <a href="https://baike.baidu.com/item/%E8%8B%8F%E8%BD%BC/53906" target="_blank">
+                                {/* <img
                                     alt="sushi-icon"
                                     src="/sushi-icon.jpg"
                                     width="100%"
                                     height="100%"
                                     className="size-9"
-                                />
+                                /> */}
 
                                 <div className="flex flex-col gap-0.5 leading-none">
-                                    <span className="font-semibold text-base p-1">
+                                    <span className="font-semibold text-base">
                                         苏轼
                                     </span>
                                     {/* <span className="">v{info?.version}</span> */}
                                 </div>
-                            </NavLink>
+                            </a>
                         </SidebarMenuButton>
                     </SidebarMenuItem>
                 </SidebarMenu>
