@@ -14,18 +14,18 @@
 
 技术方案
 
-1. 采用 [Eliza 智能体框架](https://elizaos.github.io/eliza/) 实现了 Agent 定义和前端，基于 [elizaOS/eliza-starter](https://github.com/elizaOS/eliza-starter) 模板开发
-2. 使用 [NEAR AI](https://docs.near.ai/) 模型服务来调用 Agent LLM 接口，但并未使用 NEAR AI 的 Agent 部署服务
+1. 采用 [Eliza 智能体框架](https://elizaos.github.io/eliza/) 实现了 Agent 描述，基于 [elizaOS/eliza-starter](https://github.com/elizaOS/eliza-starter) 模板开发
+2. 使用 [NEAR AI](https://docs.near.ai/) 模型服务来调用 Agent LLM 接口，支持主流开源大模型如 Llama, QWen, DeepSeek 等。但没有使用 NEAR AI 的 Agent 部署服务
 3. 背后调用的是 [DeepSeek v3](https://github.com/deepseek-ai/DeepSeek-v3) 开源大模型
 4. 前端开发使用 [React 框架](https://github.com/facebook/react)
 5. 后端开发使用 [Node.js](https://github.com/nodejs/node)（版本需要是 v22 或以上）
 
 代码实现
 
-1. 智能体相关的代码主要在 [src/character.ts](src/character.ts) 当中
-2. 对于 NEAR AI 的接入，在 [src/config](src/config/index.ts) 当中进行了修改
-3. 前端代码对 [client](client) 中的不同组件进行了修改，展示苏轼形象和交互对话
-4. 语音播报的修改主要在 [client/src/components/ui/chat/chat-tts-button.tsx](client/src/components/ui/chat/chat-tts-button.tsx) 当中
+1. 苏轼智能体相关的描述代码主要在 [src/character.ts](src/character.ts) 当中，包括人物背景和涉及话题等。特别地，为了使人物更真实，要求苏轼对于北宋以后的世界不了解，这与一般智能体要求不同
+2. 为了接入 NEAR AI 模型服务，在 [src/config](src/config/index.ts) 当中进行了修改，主要包括 API Key 的查询等
+3. 前端代码为展示苏轼形象和实现交互对话，对 [client](client) 当中的不同组件进行了修改，是在 [elizaos/eliza](https://github.com/elizaOS/eliza/tree/main/client) 的代码基础上做的改进
+4. 语音播报的修改主要在 [client/src/components/ui/chat/chat-tts-button.tsx](client/src/components/ui/chat/chat-tts-button.tsx) 当中，主要修复了语音播报无效的问题。但由于 Eleven Labs 语音模型对中文支持不完善，在线的版本中没有开启，可以根据以下步骤打开。
 
 ## 准备环境
 
