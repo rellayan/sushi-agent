@@ -4,7 +4,7 @@
 
 苏轼智能体借助 DeepSeek 大语言模型 (LLM) 开发了一个具备苏轼的性格特点、语言风格和知 识经验的 AI 智能体，帮助我们与东坡先生进行穿越古今的人生对话。
 
-🔗 来与苏轼交谈吧：https://sushi-agent-client.onrender.com
+🔗 一起来与苏轼交谈吧：https://sushi-agent-client.onrender.com
 
 <img width="1460" alt="image" src="https://github.com/user-attachments/assets/dca2701a-79d3-4276-8646-082d92907017" />
 
@@ -22,7 +22,7 @@
 
 代码实现
 
-1. 苏轼智能体相关的描述代码主要在 [src/character.ts](src/character.ts) 当中，包括人物背景和涉及话题等。特别地，为了使人物更真实，要求苏轼对于北宋以后的世界不了解，这与一般智能体要求不同
+1. 苏轼智能体相关的描述代码主要在 [src](src) 文件夹和[src/character.ts](src/character.ts) 文件当中，包括人物背景和涉及话题等。特别地，为了使人物更真实，要求苏轼对于北宋以后的世界不了解，这与一般智能体要求不同
 2. 为了接入 NEAR AI 模型服务，在 [src/config](src/config/index.ts) 当中进行了修改，主要包括 API Key 的查询等
 3. 前端代码为展示苏轼形象和实现交互对话，对 [client](client) 当中的不同组件进行了修改，是在 [elizaos/eliza](https://github.com/elizaOS/eliza/tree/main/client) 的代码基础上做的改进
 4. 语音播报的修改主要在 [client/src/components/ui/chat/chat-tts-button.tsx](client/src/components/ui/chat/chat-tts-button.tsx) 当中，主要修复了语音播报无效的问题。但由于 Eleven Labs 语音模型对中文支持不完善，在线的版本中没有开启，可以根据以下步骤打开。
