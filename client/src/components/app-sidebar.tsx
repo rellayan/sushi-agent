@@ -35,7 +35,7 @@ export function AppSidebar() {
                 <SidebarMenu>
                     <SidebarMenuItem>
                         <SidebarMenuButton size="lg" asChild>
-                            <a href="https://baike.baidu.com/item/%E8%8B%8F%E8%BD%BC/53906" target="_blank">
+                            <NavLink to="/">
                                 {/* <img
                                     alt="sushi-icon"
                                     src="/sushi-icon.jpg"
@@ -50,7 +50,7 @@ export function AppSidebar() {
                                     </span>
                                     {/* <span className="">v{info?.version}</span> */}
                                 </div>
-                            </a>
+                            </NavLink>
                         </SidebarMenuButton>
                     </SidebarMenuItem>
                 </SidebarMenu>
