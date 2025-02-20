@@ -22,7 +22,7 @@ export function AppSidebar() {
                             <NavLink to="/">
                                 {/* <img
                                     alt="sushi-icon"
-                                    src="/sushi-icon.jpg"
+                                    src="/sushi-icon.png"
                                     width="100%"
                                     height="100%"
                                     className="size-9"

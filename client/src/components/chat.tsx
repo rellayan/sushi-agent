@@ -206,7 +206,7 @@ export default function Page({ agentId }: { agentId: UUID }) {
                                 >
                                     {message?.user !== "user" ? (
                                         <Avatar className="size-12 p-1 border rounded-full select-none">
-                                            <AvatarImage src="/sushi-icon.jpg" />
+                                            <AvatarImage src="/sushi-icon.png" />
                                         </Avatar>
                                     ) : null}
                                     <div className="flex flex-col">
@@ -305,7 +305,7 @@ export default function Page({ agentId }: { agentId: UUID }) {
                             >
                                 {defaultMessage?.user !== "user" ? (
                                     <Avatar className="size-12 p-1 border rounded-full select-none">
-                                        <AvatarImage src="/sushi-icon.jpg" />
+                                        <AvatarImage src="/sushi-icon.png" />
                                     </Avatar>
                                 ) : null}
                                 <div className="flex flex-col">
