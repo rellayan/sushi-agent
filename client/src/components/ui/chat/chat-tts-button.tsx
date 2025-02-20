@@ -1,7 +1,7 @@
 import { Ellipsis, StopCircle, Volume2 } from "lucide-react";
 import { Button } from "../button";
 import { useMutation } from "@tanstack/react-query";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { apiClient } from "@/lib/api";
 import { Tooltip, TooltipTrigger, TooltipContent } from "../tooltip";
 import { useToast } from "@/hooks/use-toast";
@@ -33,6 +33,11 @@ export default function ChatTtsButton({
             });
         },
     });
+
+    useEffect(() => {
+        // enable this if we want to play the text-to-speech audio
+        // mutation.mutate();
+    }, []);
 
     const play = () => {
         if (audioRef.current) {
