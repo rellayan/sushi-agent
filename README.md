@@ -51,10 +51,19 @@ cp .env.example .env
 
 > 注意: 安装和运行时，Node.js 版本需要的最低版本是 v22
 
-1. 安装
+1. 安装 Node.js 和 pnpm
+
+在 https://nodejs.org/ 下载安装包，安装 Node.js。
+
+打开命令行窗口，运行命令安装 pnpm 和依赖的包
 
 ```bash
-pnpm i
+# 下载 pnpm
+npm i -g pnpm
+
+# 安装依赖
+pnpm install
+cd client & pnpm install & cd ..
 ```
 
 2. 启动智能体服务
@@ -67,7 +76,7 @@ pnpm start
 
 3. 启动智能体前端
 
-在另一个命令行窗口，启动前端，在 http://localhost:5173 打开前端页面
+在一个新的命令行窗口，启动前端，可以在 http://localhost:5173 用浏览器打开前端页面
 
 ```bash
 pnpm start:client
