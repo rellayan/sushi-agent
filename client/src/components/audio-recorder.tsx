@@ -87,7 +87,7 @@ export const AudioRecorder = ({
         onError: (e) => {
             toast({
                 variant: "destructive",
-                title: "Unable to start recording",
+                title: "无法开始录音",
                 description: e.message,
             });
             console.log(e);
@@ -138,7 +138,7 @@ export const AudioRecorder = ({
                 .catch((e) => {
                     toast({
                         variant: "destructive",
-                        title: "Unable to start recording",
+                        title: "无法开始录音",
                         description: e.message,
                     });
                     console.log(e);
@@ -252,7 +252,7 @@ export const AudioRecorder = ({
                             </Button>
                         </TooltipTrigger>
                         <TooltipContent className="m-2">
-                            <span> Reset recording</span>
+                            <span>重置录音</span>
                         </TooltipContent>
                     </Tooltip>
                 ) : null}
@@ -280,7 +280,7 @@ export const AudioRecorder = ({
                         )}
                     </TooltipTrigger>
                     <TooltipContent side="right">
-                        <span>{!isRecording ? "Start" : "Send"} </span>
+                        <span>{!isRecording ? "录音" : "发送"} </span>
                     </TooltipContent>
                 </Tooltip>
             </div>

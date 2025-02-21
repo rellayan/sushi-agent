@@ -403,7 +403,7 @@ export default function Page({ agentId }: { agentId: UUID }) {
                                     >
                                         <Paperclip className="size-4" />
                                         <span className="sr-only">
-                                            Attach file
+                                            添加文件
                                         </span>
                                     </Button>
                                     <input
@@ -416,7 +416,7 @@ export default function Page({ agentId }: { agentId: UUID }) {
                                 </div>
                             </TooltipTrigger>
                             <TooltipContent side="left">
-                                <p>Attach file</p>
+                                <p>添加文件</p>
                             </TooltipContent>
                         </Tooltip>
                         <AudioRecorder
