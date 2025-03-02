@@ -14,7 +14,7 @@ import { NavLink } from "react-router";
 import ConnectionStatus from "./connection-status";
 import { useEffect, useState } from "react";
 
-const SUSHI_VIDEO_URL = "https://p2-kling.klingai.com/bs2/upload-ylab-stunt/special-effect/output/HB1_PROD_ai_web_272874278140611/-883994732104358824/output.mp4";
+const SUSHI_VIDEO_URL = "https://p2-kling.klingai.com/bs2/upload-ylab-stunt/special-effect/output/HB1_PROD_ai_web_272904883216137/-6019641546474201279/output.mp4";
 const SUSHI_DEFAULT_IMAGE = "/sushi-full.png";
 
 function getRandomFrame(videoElement: HTMLVideoElement): Promise<string> {
