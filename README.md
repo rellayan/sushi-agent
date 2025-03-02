@@ -6,7 +6,8 @@
 
 一起来与东坡先生交谈吧：🔗 https://sushi-agent-client.onrender.com
 
-<img width="1460" alt="image" src="https://github.com/user-attachments/assets/dca2701a-79d3-4276-8646-082d92907017" />
+<img width="1467" alt="cover" src="https://github.com/user-attachments/assets/09673916-ecb8-4820-b970-73cbd39d1b00" />
+
 
 ## 项目设计
 
