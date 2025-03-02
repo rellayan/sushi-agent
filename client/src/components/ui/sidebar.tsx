@@ -31,6 +31,10 @@ type SidebarContext = {
     setOpenMobile: (open: boolean) => void;
     isMobile: boolean;
     toggleSidebar: () => void;
+    imageFrame: number;
+    setImageFrame: (frame: number) => void;
+    isVideoPlaying: boolean;
+    setVideoPlaying: (playing: boolean) => void;
 };
 
 const SidebarContext = React.createContext<SidebarContext | null>(null);
@@ -66,6 +70,8 @@ const SidebarProvider = React.forwardRef<
     ) => {
         const isMobile = useIsMobile();
         const [openMobile, setOpenMobile] = React.useState(false);
+        const [imageFrame, setImageFrame]= React.useState(0);
+        const [isVideoPlaying, setVideoPlaying]= React.useState(false);
 
         // This is the internal state of the sidebar.
         // We use openProp and setOpenProp for control from outside the component.
@@ -123,6 +129,10 @@ const SidebarProvider = React.forwardRef<
                 openMobile,
                 setOpenMobile,
                 toggleSidebar,
+                imageFrame,
+                setImageFrame,
+                isVideoPlaying,
+                setVideoPlaying,
             }),
             [
                 state,
@@ -132,6 +142,10 @@ const SidebarProvider = React.forwardRef<
                 openMobile,
                 setOpenMobile,
                 toggleSidebar,
+                imageFrame,
+                setImageFrame,
+                isVideoPlaying,
+                setVideoPlaying,
             ]
         );
 

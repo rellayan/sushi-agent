@@ -26,7 +26,6 @@ const fetcher = async ({
     // handle ngrok
     if (BASE_URL.includes("ngrok")) {
         (options.headers as Record<string, string>)["ngrok-skip-browser-warning"] = "true";
-        console.log('url', BASE_URL, options.headers);
     }
 
     if (method === "POST") {
