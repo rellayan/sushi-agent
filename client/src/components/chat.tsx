@@ -23,6 +23,7 @@ import type { IAttachment } from "@/types";
 import { AudioRecorder } from "./audio-recorder";
 import { Badge } from "./ui/badge";
 import { useAutoScroll } from "./ui/chat/hooks/useAutoScroll";
+import { useSidebar } from "./ui/sidebar";
 
 type ExtraContentFields = {
     user: string;
@@ -43,6 +44,7 @@ export default function Page({ agentId }: { agentId: UUID }) {
     const inputRef = useRef<HTMLTextAreaElement>(null);
     const fileInputRef = useRef<HTMLInputElement>(null);
     const formRef = useRef<HTMLFormElement>(null);
+    const { setVideoPlaying, imageFrame, setImageFrame } = useSidebar();
 
     const queryClient = useQueryClient();
 
@@ -60,6 +62,11 @@ export default function Page({ agentId }: { agentId: UUID }) {
     useEffect(() => {
         scrollToBottom();
     }, []);
+
+    const handleClickChatInput = () => {
+        // playing video on click chat input
+        setVideoPlaying(true);
+    }
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
         if (e.key === "Enter" && !e.shiftKey) {
@@ -129,6 +136,8 @@ export default function Page({ agentId }: { agentId: UUID }) {
             selectedFile?: File | null;
         }) => apiClient.sendMessage(agentId, message, selectedFile),
         onSuccess: (newMessages: ContentWithUser[]) => {
+            // increase image frame after receiving message
+            setImageFrame(imageFrame + 1);
             queryClient.setQueryData(
                 ["messages", agentId],
                 (old: ContentWithUser[] = []) => [
@@ -205,7 +214,7 @@ export default function Page({ agentId }: { agentId: UUID }) {
                                     className="flex flex-row items-center gap-2"
                                 >
                                     {message?.user !== "user" ? (
-                                        <Avatar className="size-12 p-1 border rounded-full select-none">
+                                        <Avatar className="size-12 p-1 rounded-full select-none">
                                             <AvatarImage src="/sushi-icon.png" />
                                         </Avatar>
                                     ) : null}
@@ -304,7 +313,7 @@ export default function Page({ agentId }: { agentId: UUID }) {
                                 className="flex flex-row items-center gap-2"
                             >
                                 {defaultMessage?.user !== "user" ? (
-                                    <Avatar className="size-12 p-1 border rounded-full select-none">
+                                    <Avatar className="size-12 p-1 rounded-full select-none">
                                         <AvatarImage src="/sushi-icon.png" />
                                     </Avatar>
                                 ) : null}
@@ -385,6 +394,7 @@ export default function Page({ agentId }: { agentId: UUID }) {
                         onKeyDown={handleKeyDown}
                         value={input}
                         onChange={({ target }) => setInput(target.value)}
+                        onClick={handleClickChatInput}
                         placeholder="想和东坡先生聊些什么？"
                         className="min-h-12 resize-none rounded-md bg-card border-0 p-3 shadow-none focus-visible:ring-0"
                     />
