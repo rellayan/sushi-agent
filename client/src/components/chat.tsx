@@ -167,7 +167,7 @@ export default function Page({ agentId }: { agentId: UUID }) {
 
     // default message and variant
     const defaultMessage= {
-        text: "回首向来萧瑟处，归去，也无风雨也无晴。",
+        text: "在下苏东坡，乃大宋文人。竹杖芒鞋，烟雨任平生。",
         user: "苏轼",
         action: "NONE",
         createdAt: Date.now(),
