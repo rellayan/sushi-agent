@@ -89,12 +89,17 @@ export function AppSidebar() {
                 <SidebarGroup>
                     <SidebarGroupContent>
                         <SidebarMenu>
-                            <video id="sushi-video" width="100%" height="100%" controlsList="nodownload"
+                            <video
+                                id="sushi-video"
+                                width="100%"
+                                height="100%"
+                                controlsList="nodownload"
+                                crossOrigin="anonymous"
                                 poster={SUSHI_DEFAULT_IMAGE}
                                 style={{ display: showVideo ? "block" : "none"}}>
                                     <source src={SUSHI_VIDEO_URL} type="video/mp4" />
                                     浏览器不支持视频播放
-                                </video>
+                            </video>
                             <img
                                 alt="sushi-full"
                                 src={imgSrc}
